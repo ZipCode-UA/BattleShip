@@ -17,7 +17,7 @@ namespace Display {
     /**
      * @brief Draws cells in gird to standard output
      */
-    void DrawGrid(const Board& board, bool showShips = true) {
+    void DrawGrid(const Board& board, bool showShips) {
 
     }
 
