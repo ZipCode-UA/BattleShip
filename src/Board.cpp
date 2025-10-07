@@ -15,3 +15,12 @@
 bool Board::getCell(int x, int y, CellTypes& cellType) const {
 
 }
+
+/**
+ * @brief Checks if given cell is in bounds of board
+ * 
+ * @return True if cell is in bounds, otherwise false
+ */
+bool Board::inBounds(int x, int y) {
+
+}

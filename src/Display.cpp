@@ -21,4 +21,11 @@ namespace Display {
 
     }
 
+    /**
+     * @brief Draws ships in a row or column and gives their name and size
+     */
+    void DrawShips(const std::vector<ShipStruct>& ships) {
+
+    }
+
 };

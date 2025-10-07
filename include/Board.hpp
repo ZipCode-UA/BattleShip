@@ -14,6 +14,9 @@
  */
 class Board {
 public:
+    /**
+     * @brief Constructor for Board
+     */
     Board();
 
     /**
@@ -25,6 +28,13 @@ public:
      * @return True if coordinates were valid, otherwise returns false 
      */
     bool Board::getCell(int x, int y, CellTypes& cellType) const;
+
+    /**
+     * @brief Checks if given cell is in bounds of board
+     * 
+     * @return True if cell is in bounds, otherwise false
+     */
+    bool inBounds(int x, int y);
 
     static const int boardWidth = 10;
     static const int boardHeight = 10;
