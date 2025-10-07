@@ -34,7 +34,7 @@ public:
      * @param[in] pos Position of given cell
      * @return True if cell is in bounds, otherwise false
      */
-    bool Board::inBounds(const Coords& pos) const;
+    bool inBounds(const Coords& pos) const;
 
     /**
      * @brief Clears board and randomly places ships on board
