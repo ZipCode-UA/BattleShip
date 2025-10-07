@@ -1,5 +1,5 @@
 /**
- *  Game.hpp
+ *  @file Game.hpp
  */
 
 #ifndef GAME_HPP

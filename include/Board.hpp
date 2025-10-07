@@ -1,5 +1,5 @@
 /**
- *  Board.hpp
+ *  @file Board.hpp
  */
 
 #ifndef BOARD_HPP

@@ -1,5 +1,5 @@
 /**
- *  Board.cpp
+ *  @file Board.cpp
  */
 
 #include "Board.hpp"

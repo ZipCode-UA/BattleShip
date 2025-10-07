@@ -1,10 +1,11 @@
 /**
- *  BattleShip.cpp
+ *  @file BattleShip.cpp
  *
- *  Implimentation of the game BattleShip
+ *  @brief Implementation of the game BattleShip
  */
 
 #include <iostream>
+#include "Game.hpp"
 
 int main(int argc, char** argv)
 {
@@ -12,28 +13,8 @@ int main(int argc, char** argv)
     std::cout << "Welcome to BattleShip!\nPress Enter to Continue ...\n";
     std::cin.get();
 
-    while (true) {
-        // Place Ships
-
-        // Generate Opponent Board
-
-        // Prompt Player for Move
-
-        // Validate Move
-        // Update Board
-
-        // Check for Win Condition
-
-        // Display Board
-
-        // Get Oponent's Move
-
-        // Validate Move
-        // Update Board
-
-        // Check for Win Condition
-
-    }
+    Game game;
+    game.run();
 
     return 0;
 }
