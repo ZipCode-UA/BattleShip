@@ -29,12 +29,27 @@ public:
     bool getCell(const Coords& pos, CellTypes& cellType) const;
 
     /**
+     * @brief Validate shot location is valid
+     * 
+     * @param cell Coordinates of cell being shot
+     * @return True if shot is valid, otherwise false
+     */
+    bool shotByOpponent(const Coords& cell);
+
+    /**
      * @brief Checks if given cell is in bounds of board
      *
      * @param[in] pos Position of given cell
      * @return True if cell is in bounds, otherwise false
      */
     bool inBounds(const Coords& pos) const;
+
+    /**
+     * @brief Checks if all ships cells have been hit
+     *
+     * @return True if all ships have been hit, otherwise false
+     */
+    bool allShipsSunk();
 
     /**
      * @brief Clears board and randomly places ships on board
@@ -45,6 +60,14 @@ public:
      * @brief Sets all cell states to Empty
      */
     void clearBoard();
+
+    /**
+     * @brief Decides where to shoot opponent's board
+     * 
+     * @param enemyBoard The board of the enemy to shoot
+     * @return The location to be shot
+     */
+    static Coords shootEnemy(const Board& enemyBoard);
 
 public:
     static const int boardWidth = 10;

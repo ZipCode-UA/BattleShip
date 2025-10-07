@@ -23,12 +23,31 @@ bool Board::getCell(const Coords& pos, CellTypes& cellType) const {
 }
 
 /**
+ * @brief Validate shot location is valid
+ * 
+ * @param cell Coordinates of cell being shot
+ * @return True if shot is valid, otherwise false
+ */
+bool Board::shotByOpponent(const Coords& cell) {
+
+}
+
+/**
  * @brief Checks if given cell is in bounds of board
  *
  * @param[in] pos Position of given cell
  * @return True if cell is in bounds, otherwise false
  */
 bool Board::inBounds(const Coords& pos) const {
+    return false;
+}
+
+/**
+ * @brief Checks if all ships cells have been hit
+ *
+ * @return True if all ships have been hit, otherwise false
+ */
+bool Board::allShipsSunk() {
     return false;
 }
 
