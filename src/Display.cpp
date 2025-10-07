@@ -28,7 +28,7 @@ namespace Display {
      * @param[in] opponent Opposing players board ships to be drawn
      * @param[in] showOpponentShips determines whether the opponents ships will be shown
      */
-    void DrawBoard(const Board& player, const Board& opponent, bool showOpponentShips = false) {
+    void DrawBoard(const Board& player, const Board& opponent, bool showOpponentShips) {
 
     }
 

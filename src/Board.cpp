@@ -35,9 +35,13 @@ bool Board::inBounds(int x, int y) {
 /**
  * @brief Clears board and randomly places ships on board
  */
-void randomShipPlacement();
+void Board::randomShipPlacement() {
+
+}
 
 /**
  * @brief Sets all cell states to Empty
  */
-void clearBoard();
+void Board::clearBoard() {
+
+}
