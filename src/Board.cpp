@@ -8,7 +8,7 @@
  * @brief Constructor for Board
  */
 Board::Board() {
-
+    clearBoard();
 }
 
 /**

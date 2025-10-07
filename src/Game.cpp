@@ -3,6 +3,7 @@
  */
 
 #include "Game.hpp"
+#include "Display.hpp"
 
 Game::Game() {
 
@@ -14,9 +15,15 @@ Game::Game() {
 void Game::run() {
 
     // Place Ships
-    // Generate Opponent Board
+    Display::DrawBoard(Player1);
+    Display::DrawShips(ships);
 
-    while (true) {
+    // Generate Opponent Board
+    Player2.randomShipPlacement();
+
+    bool inGame = true;
+
+    while (inGame) {
         // Prompt Player for Move
 
         // Validate Move
