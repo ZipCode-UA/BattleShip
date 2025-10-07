@@ -31,3 +31,13 @@ bool Board::getCell(int x, int y, CellTypes& cellType) const {
 bool Board::inBounds(int x, int y) {
     return false;
 }
+
+/**
+ * @brief Clears board and randomly places ships on board
+ */
+void randomShipPlacement();
+
+/**
+ * @brief Sets all cell states to Empty
+ */
+void clearBoard();
