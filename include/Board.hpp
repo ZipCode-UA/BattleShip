@@ -27,7 +27,7 @@ public:
      * @param[out] cellType The cellType of the given coordinates
      * @return True if coordinates were valid, otherwise returns false 
      */
-    bool Board::getCell(int x, int y, CellTypes& cellType) const;
+    bool getCell(int x, int y, CellTypes& cellType) const;
 
     /**
      * @brief Checks if given cell is in bounds of board

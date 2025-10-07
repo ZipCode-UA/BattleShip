@@ -5,6 +5,13 @@
 #include "Board.hpp"
 
 /**
+ * @brief Constructor for Board
+ */
+Board::Board() {
+
+}
+
+/**
  * @brief Returns the cell type of a given cell
  * 
  * @param[in] x Represents the x coordinate
@@ -13,7 +20,7 @@
  * @return True if coordinates were valid, otherwise returns false 
  */
 bool Board::getCell(int x, int y, CellTypes& cellType) const {
-
+    return false;
 }
 
 /**
@@ -22,5 +29,5 @@ bool Board::getCell(int x, int y, CellTypes& cellType) const {
  * @return True if cell is in bounds, otherwise false
  */
 bool Board::inBounds(int x, int y) {
-
+    return false;
 }
