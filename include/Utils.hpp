@@ -10,6 +10,8 @@
 
 /**
  * @struct Coords
+ * 
+ * @brief Coordinates of cells starting at 0
  */
 struct Coords {
     int x;
