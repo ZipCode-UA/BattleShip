@@ -1,8 +1,8 @@
-/*
-    BattleShip.cpp
-
-    Implimentation of the game BattleShip
-*/
+/**
+ *  BattleShip.cpp
+ *
+ *  Implimentation of the game BattleShip
+ */
 
 #include <iostream>
 

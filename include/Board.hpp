@@ -1,6 +1,6 @@
-/*
-    BOARD.hpp
-*/
+/**
+ *  Board.hpp
+ */
 
 #ifndef BOARD_HPP
 #define BOARD_HPP
