@@ -5,7 +5,11 @@ set(CMAKE_CXX_STANDARD 20)
 
 project(BattleShip C CXX ASM)
 
-add_executable(${CMAKE_PROJECT_NAME} src/BattleShip.cpp)
+add_executable(${CMAKE_PROJECT_NAME} src/BattleShip.cpp
+    src/Board.cpp
+    src/Game.cpp
+    src/Input.cpp
+)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
     include
