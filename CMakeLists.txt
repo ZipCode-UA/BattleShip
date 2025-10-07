@@ -9,6 +9,7 @@ add_executable(${CMAKE_PROJECT_NAME} src/BattleShip.cpp
     src/Board.cpp
     src/Game.cpp
     src/Input.cpp
+    src/Display.cpp
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
