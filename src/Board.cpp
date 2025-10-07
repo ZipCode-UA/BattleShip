@@ -12,6 +12,6 @@
  * @param[out] cellType The cellType of the given coordinates
  * @return True if coordinates were valid, otherwise returns false 
  */
-bool Board::getCell(int x, int y) const {
+bool Board::getCell(int x, int y, CellTypes& cellType) const {
 
 }
