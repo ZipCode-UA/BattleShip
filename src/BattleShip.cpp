@@ -10,7 +10,7 @@
 int main(int argc, char** argv)
 {
 
-    std::cout << "Welcome to BattleShip!\nPress Enter to Continue ...\n";
+    std::cout << "Press Enter to Continue ...\n";
     std::cin.get();
 
     Game game;
