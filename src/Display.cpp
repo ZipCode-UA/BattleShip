@@ -14,4 +14,11 @@ namespace Display {
         std::cout << "Welcome to BattleShip!\n";
     }
 
+    /**
+     * @brief Draws cells in gird to standard output
+     */
+    void DrawGrid(const Board& board, bool showShips = true) {
+
+    }
+
 };
