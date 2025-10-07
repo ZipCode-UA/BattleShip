@@ -9,6 +9,14 @@
 #include <vector>
 
 /**
+ * @struct Coords
+ */
+struct Coords {
+    int x;
+    int y;
+};
+
+/**
  * @enum CellTypes
  *
  * @brief Represents four possible states a cell can be in
