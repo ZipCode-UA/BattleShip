@@ -4,6 +4,10 @@
 
 #include "Game.hpp"
 
+Game::Game() {
+
+}
+
 void Game::run() {
 
     // Place Ships
