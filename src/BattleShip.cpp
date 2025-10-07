@@ -6,10 +6,12 @@
 
 #include <iostream>
 #include "Game.hpp"
+#include "Display.hpp"
 
 int main(int argc, char** argv)
 {
 
+    Display::DrawBanner();
     std::cout << "Press Enter to Continue ...\n";
     std::cin.get();
 

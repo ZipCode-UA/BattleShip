@@ -17,6 +17,11 @@ enum CellTypes {
     Miss
 };
 
+/**
+ * @class Board
+ *
+ * @brief Represents a grid of cells for the game
+ */
 class Board {
 
 };
