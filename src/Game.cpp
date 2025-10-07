@@ -8,6 +8,9 @@ Game::Game() {
 
 }
 
+/**
+ * @brief Starts game loop
+ */
 void Game::run() {
 
     // Place Ships

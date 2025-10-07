@@ -11,7 +11,11 @@ class Game {
 public:
     Game();
 
+    /**
+     * @brief Starts game loop
+     */
     void run();
+
 private:
     Board Player1;
     Board Player2;
