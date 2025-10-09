@@ -15,10 +15,10 @@ namespace Display {
     }
 
     /**
-     * @brief Draws cells in gird to standard output
+     * @brief Draw s cells in gird to standard output
      */
     void DrawBoard(const Board& board, bool showShips) {
-
+        // Add changes
     }
 
     /**
