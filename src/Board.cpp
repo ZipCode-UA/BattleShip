@@ -29,7 +29,7 @@ bool Board::getCell(const Coords& pos, CellTypes& cellType) const {
  * @return True if shot is valid, otherwise false
  */
 bool Board::shotByOpponent(const Coords& cell) {
-
+    return false;
 }
 
 /**
@@ -63,4 +63,14 @@ void Board::randomShipPlacement() {
  */
 void Board::clearBoard() {
 
+}
+
+/**
+ * @brief Decides where to shoot opponent's board
+ * 
+ * @param enemyBoard The board of the enemy to shoot
+ * @return The location to be shot
+ */
+Coords Board::shootEnemy(const Board& enemyBoard) {
+    return {0, 0};
 }
