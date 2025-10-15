@@ -12,7 +12,7 @@ namespace Display {
      */
     void DrawBanner() {
         std::cout << "\033[2J";
-        std::cout << "\033[3;1H";
+        std::cout << "\033[1;1H";
         std::cout << "Welcome to BattleShip!\nPress Enter to Continue!";
     }
 
