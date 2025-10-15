@@ -29,19 +29,21 @@ namespace Display {
         std::cout << "\033[2J";
 
         // Draw Player 1 Board
+        const Coords board1Pos = {1, 1};
         std::cout << "\033[1;1H";
+        std::cout << std::string("\033[1;" + std::to_string(board1Pos.x) + "H");
         std::cout << "   Your Board";
         std::cout << "\033[1B";
-        DrawEmptyGrid({1, 3}, player.boardWidth, player.boardHeight);
-        DrawCells(player, {1, 3}, true);
+        DrawEmptyGrid(board1Pos, player.boardWidth, player.boardHeight);
+        DrawCells(player, board1Pos, true);
 
         // Draw Player 2 Board
-        std::cout << "\033[1;1H";
-        std::cout << std::string("\033[" + std::to_string(player.boardWidth * 2 + 5) + "C");
+        const Coords board2Pos = {opponent.boardWidth * 3 + 8, 1};
+        std::cout << std::string("\033[1;" + std::to_string(board2Pos.x) + "H");
         std::cout << "   Opponent's Board";
         std::cout << "\033[1B";
-        DrawEmptyGrid({26, 3}, opponent.boardWidth, opponent.boardHeight);
-        DrawCells(opponent, {26, 3}, showOpponentShips);
+        DrawEmptyGrid(board2Pos, opponent.boardWidth, opponent.boardHeight);
+        DrawCells(opponent, board2Pos, showOpponentShips);
 
         // Set cursor Below Boards
         std::cout << "\033[1G";
@@ -59,12 +61,12 @@ namespace Display {
      * @param[in] height The number of rows (vertical cells) in the board.
      */
     void DrawEmptyGrid(Coords pos, int width, int height) {
-        std::cout << std::string("\033[" + std::to_string(pos.y) + ";" + std::to_string(pos.x) + "H");
+        std::cout << std::string("\033[" + std::to_string(pos.y + 2) + ";" + std::to_string(pos.x) + "H");
 
         // column labels
         std::cout << "   ";
         for (int i = 1; i <= width; ++i) {
-            std::cout << std::to_string(i) << ' ';
+            std::cout << std::to_string(i) << "  ";
         }
         std::cout << "\033[2B";
 
@@ -72,9 +74,9 @@ namespace Display {
         std::cout << std::string("\033[" + std::to_string(pos.x) + "G");
         std::cout << "  ┏";
         for (int i = 0; i < height - 1; ++i) {
-            std::cout << "━┯";
+            std::cout << "━━┯";
         }
-        std::cout << "━┓\033[1B";
+        std::cout << "━━┓\033[1B";
         std::cout << std::string("\033[" + std::to_string(pos.x) + "G");
 
         CellTypes curType;
@@ -86,7 +88,7 @@ namespace Display {
             std::cout << static_cast<char>(rowLabel + cur.y) << " ┃";
 
             for (cur.x = 0; cur.x < height; ++cur.x) {
-                std::cout << " ";
+                std::cout << "  ";
                 if (cur.x == width - 1) std::cout << "┃";
                 else std::cout << "│";
             }
@@ -98,16 +100,16 @@ namespace Display {
                 // Draw bottom of board's box
                 std::cout << "  ┗";
                 for (int i = 0; i < width - 1; ++i)
-                    std::cout << "━┷";
-                std::cout << "━┛";
+                    std::cout << "━━┷";
+                std::cout << "━━┛";
                 std::cout << std::string("\033[" + std::to_string(pos.x) + "G");
             }
             else {
                 // Draw inbetween rows
                 std::cout << "  ┠";
                 for (int i = 0; i < height - 1; ++i)
-                    std::cout << "─┼";
-                std::cout << "─┨";
+                    std::cout << "──┼";
+                std::cout << "──┨";
                 std::cout << std::string("\033[" + std::to_string(pos.x) + "G");
             }
             std::cout << "\033[1B";
@@ -123,7 +125,7 @@ namespace Display {
      */
     void DrawCells(const Board& player, Coords pos, bool showShips) {
 
-        std::cout << std::string("\033[" + std::to_string(pos.y + 3) + ";" + std::to_string(pos.x + 3) + "H");
+        std::cout << std::string("\033[" + std::to_string(pos.y + 5) + ";" + std::to_string(pos.x + 3) + "H");
         Coords cur;
         for (cur.y = 0; cur.y < player.boardHeight; ++cur.y) {
             for (cur.x = 0; cur.x < player.boardWidth; ++cur.x) {
@@ -152,12 +154,12 @@ namespace Display {
                 }
 
                 // Print one colored cell (space with background)
-                std::cout << colorCode << " " << "\033[0m";
+                std::cout << colorCode << "  " << "\033[0m";
 
                 std::cout << "\033[1C";
             }
             std::cout << "\033[2B";
-            std::cout << std::string("\033[" + std::to_string(cur.x * 2) + "D");
+            std::cout << std::string("\033[" + std::to_string(cur.x * 3) + "D");
         }
     }
 
