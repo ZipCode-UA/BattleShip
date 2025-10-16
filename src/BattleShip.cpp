@@ -18,7 +18,6 @@ void EnableUnicodeWindows() {
 #endif
 }
 
-
 int main(int argc, char** argv)
 {
     EnableUnicodeWindows();
