@@ -2,8 +2,6 @@
  *  @file Board.cpp
  */
 
- // test
-
 #include "Board.hpp"
 
 /**
