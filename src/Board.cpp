@@ -63,6 +63,20 @@ void Board::randomShipPlacement() {
  */
 void Board::clearBoard() {
 
+    // Go through the array and set everything to Empty (0)
+
+    for(int i = 0; i < 10; i++) {       // Columns x
+
+        for(int j = 0; j < 10; j++) {   // Rows y
+
+            grid[i][j] = Empty;         // Set cell to Empty (0)
+
+        }
+
+    }
+
+    return;                             // Return to calling function
+
 }
 
 /**
