@@ -19,7 +19,11 @@ Board::Board() {
  * @return True if coordinates were valid, otherwise returns false 
  */
 bool Board::getCell(const Coords& pos, CellTypes& cellType) const {
-    return false;
+    if(!inBounds(pos)){
+        return false;
+    }
+    cellType = grid[pos.x][pos.y];
+    return true;
 }
 
 /**
