@@ -66,7 +66,14 @@ void Board::randomShipPlacement() {
  * @brief Sets all cell states to Empty
  */
 void Board::clearBoard() {
+    // Go through the array and set everything to Empty (0)
+    for(int i = 0; i < boardWidth; i++) {       // Columns x
+        for(int j = 0; j < boardHeight; j++) {   // Rows y
+            grid[i][j] = Empty;         // Set cell to Empty (0)
+        }
+    }
 
+    return;                             // Return to calling function
 }
 
 /**
