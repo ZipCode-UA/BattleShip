@@ -64,10 +64,28 @@ public:
     /**
      * @brief Decides where to shoot opponent's board
      * 
-     * @param enemyBoard The board of the enemy to shoot
+     * @param[in] enemyBoard The board of the enemy to shoot
      * @return The location to be shot
      */
     static Coords shootEnemy(const Board& enemyBoard);
+
+    /**
+     * @brief Checks if a shot on this cell is valid
+     *
+     * @param[in] coordinates to check
+     * @return Returns false if coords given are not valid to be shot, otherwise true
+     */
+    bool isValidShotLocation(const Coords& coords) const {
+        if (!inBounds(coords)) {
+            return false;
+        }
+
+        if (grid[coords.x][coords.y] == Miss || grid[coords.x][coords.y] == Hit) {
+            return false;
+        }
+
+        return true;
+    }
 
 public:
     static const int boardWidth = 10;
