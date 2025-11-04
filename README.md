@@ -13,7 +13,7 @@ You have the following tools installed on your system:
 - A C++ compiler (e.g., GCC, Clang, or MSVC)
 
 ### Contribution Steps
-1. Assign an issue to yourself and move it to In Progress.
+1. Assign an issue to yourself and move it to In Progress. This is done in the BattleShip Project page not the repository page.
 2. Clone the repository:
     ```bash
     git clone https://github.com/ZipCode-UA/BattleShip
