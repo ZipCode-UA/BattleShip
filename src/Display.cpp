@@ -4,6 +4,7 @@
 
 #include "Display.hpp"
 #include <iostream>
+#include <iomanip>
 
 namespace Display {
 
@@ -174,8 +175,30 @@ namespace Display {
 
     /**
      * @brief Draws ships in a row or column and gives their name and size
+     * @param[in] ships You must pass the ships structure to this function or else it won't work
      */
     void DrawShips(const std::vector<ShipStruct>& ships) {
+
+        std::cout << "\n\nAvailable Ships:\n";
+
+        // Print the labels
+
+        std::cout << std::setfill('-') << std::setw(1 + 20 + 1 + 12 + 1) << "" << std::endl;
+        std::cout << std::setfill(' ') << std::left << "|" << std::setw(20) << "Ship Type:" << "|" << std::setw(12) << "Ship Size:" << "|" << std::endl;
+        std::cout << std::setfill('-') << std::setw(1 + 20 + 1 + 12 + 1) << "" << std::endl;
+
+        // Print each ship and its size
+
+        for(int i = 0; i < ships.size(); i++){
+
+            std::cout << "|" << std::setfill(' ') << std::left << std::setw(20) << ships[i].name;
+            std::cout << "|" << std::left << std::setw(12) << ships[i].size << "|" << std::endl;
+
+            std::cout << std::setfill('-') << std::setw(35) << "" << std::endl;
+
+        }
+
+        std::cout << std::endl;
 
     }
 
