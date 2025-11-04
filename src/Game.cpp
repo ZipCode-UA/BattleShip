@@ -19,7 +19,6 @@ void Game::run() {
     // Place Ships
     Display::DrawBoard(Player1, Player2);
     Display::DrawShips(ships);
-    std::cin.get(); // TEST!!!!! THIS IS A TEST so I can see if I'm doing it right
     placeShips();
 
     // Generate Opponent Board
