@@ -5,6 +5,7 @@
 #include "Input.hpp"
 
 #include <iostream>
+#include <limits>
 
 #include "Board.hpp"
 #include "Utils.hpp"
