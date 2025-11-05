@@ -52,7 +52,15 @@ bool Board::inBounds(const Coords& pos) const {
  * @return True if all ships have been hit, otherwise false
  */
 bool Board::allShipsSunk() {
-    return false;
+    // Scan the entire grid; if any cell still contains a Ship, not all ships are sunk.
+    for (int x = 0; x < boardWidth; ++x) {
+        for (int y = 0; y < boardHeight; ++y) {
+            if (grid[x][y] == Ship) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 /**
