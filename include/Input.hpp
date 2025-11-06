@@ -9,6 +9,15 @@
 #include "Utils.hpp"
 
 /**
+ * @brief Checks whether the user entered a valid input string
+ *
+ * @param[in] input The input string to validate
+ *
+ * @return true indicates valid input
+ */
+bool validateCellInput(const std::string &input);
+
+/**
  * @brief Checks whether a cell is valid for shooting and clears input buffer
  *
  * @param[in] board The active board object for bounds checking
