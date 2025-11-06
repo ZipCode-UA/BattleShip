@@ -6,7 +6,6 @@
 
 #include <cctype>
 #include <iostream>
-#include <limits>
 #include <string>
 
 #include "Board.hpp"
@@ -25,7 +24,6 @@ bool validateCellInput(const std::string &input)
     {
         std::cerr << "Invalid cell input\n\n";
         std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return false;
     }
 
