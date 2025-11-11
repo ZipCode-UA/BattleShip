@@ -3,7 +3,6 @@
  */
 
 #include "Input.hpp"
-#include <iostream>
 
 
 /**
