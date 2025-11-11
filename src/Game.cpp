@@ -5,7 +5,6 @@
 #include "Game.hpp"
 #include "Display.hpp"
 #include "Input.hpp"
-#include <iostream>
 
 Game::Game() {
 
