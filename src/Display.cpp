@@ -179,26 +179,72 @@ namespace Display {
      */
     void DrawShips(const std::vector<ShipStruct>& ships) {
 
+        // Constants for label widths
+
+        const int WIDTH_NAME = 20;
+        const int WIDTH_SIZE = 12;
+
         std::cout << "\n\nAvailable Ships:\n";
 
         // Print the labels
 
-        std::cout << std::setfill('-') << std::setw(1 + 20 + 1 + 12 + 1) << "" << std::endl;
-        std::cout << std::setfill(' ') << std::left << "|" << std::setw(20) << "Ship Type:" << "|" << std::setw(12) << "Ship Size:" << "|" << std::endl;
-        std::cout << std::setfill('-') << std::setw(1 + 20 + 1 + 12 + 1) << "" << std::endl;
+        // Print top of table
+
+        std::cout << "┏";
+        for(int w = 0; w < WIDTH_NAME; w++) {
+            std::cout << "━";
+        }
+        std::cout << "┯";
+        for(int w = 0; w < WIDTH_SIZE; w++) {
+            std::cout << "━";
+        }
+        std::cout << "┓" << std::endl;
+
+        // Print legend labels
+
+        std::cout << "┃";
+        std::cout << std::setfill(' ') << std::setw(WIDTH_NAME) << std::left << "Ship Type:";
+        std::cout << "│";
+        std::cout << std::setfill(' ') << std::setw(WIDTH_SIZE) << std::left << "Ship Size:";
+        std::cout << "┃" << std::endl; 
 
         // Print each ship and its size
 
         for(int i = 0; i < ships.size(); i++){
 
-            std::cout << "|" << std::setfill(' ') << std::left << std::setw(20) << ships[i].name;
-            std::cout << "|" << std::left << std::setw(12) << ships[i].size << "|" << std::endl;
+            // Horizontal divider
 
-            std::cout << std::setfill('-') << std::setw(35) << "" << std::endl;
+            std::cout << "┠";
+            for(int w = 0; w < WIDTH_NAME; w++){
+                std::cout << "─";
+            }
+            std::cout << "┼";
+            for(int w = 0; w < WIDTH_SIZE; w++){
+                std::cout << "─";
+            }
+            std::cout << "┨" << std::endl;
+
+            // Ship info
+
+            std::cout << "┃";
+            std::cout << std::setfill(' ') << std::left << std::setw(WIDTH_NAME) << ships[i].name;
+            std::cout << "│";
+            std::cout << std::setfill(' ') << std::left << std::setw(WIDTH_SIZE) << ships[i].size;
+            std::cout << "┃" << std::endl;
 
         }
 
-        std::cout << std::endl;
+        // Bottom of table
+        
+        std::cout << "┗";
+        for(int w = 0; w < WIDTH_NAME; w++){
+            std::cout << "━";
+        }
+        std::cout << "┷";
+        for(int w = 0; w < WIDTH_SIZE; w++){
+            std::cout << "━";
+        }
+        std::cout << "┛" << std::endl;
 
     }
 
