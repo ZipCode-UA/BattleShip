@@ -43,6 +43,11 @@ bool Board::shotByOpponent(const Coords& cell) {
  * @return True if cell is in bounds, otherwise false
  */
 bool Board::inBounds(const Coords& pos) const {
+    if (pos.x >= 0 && pos.x <= boardWidth
+        && pos.y >= 0 && pos.y <= boardHeight)
+    {
+        return true;
+    }
     return false;
 }
 
