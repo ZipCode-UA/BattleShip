@@ -3,11 +3,14 @@
  */
 
 #include "Board.hpp"
+#include <cstdlib>
+#include <ctime>
 
 /**
  * @brief Constructor for Board
  */
 Board::Board() {
+    std::srand(time(0));
     clearBoard();
 }
 
@@ -96,5 +99,7 @@ void Board::clearBoard() {
  * @return The location to be shot
  */
 Coords Board::shootEnemy(const Board& enemyBoard) {
-    return {0, 0};
+    int randx = 1 + (rand() % boardWidth);
+    int randy = 1 + (rand() % boardHeight);
+    return {randx, randy};
 }
