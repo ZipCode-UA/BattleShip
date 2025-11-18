@@ -27,9 +27,8 @@ void Game::run() {
     bool player1Won;
 
     while (inGame) {
-        Coords curCoords;
         // Get player1 move
-        getShotCell(curCoords);
+        Coords curCoords = getShotCell(Player2);
         Player2.shotByOpponent(curCoords);
         Display::DrawBoard(Player1, Player2);
 

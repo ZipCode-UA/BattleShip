@@ -19,7 +19,11 @@ Board::Board() {
  * @return True if coordinates were valid, otherwise returns false 
  */
 bool Board::getCell(const Coords& pos, CellTypes& cellType) const {
-    return false;
+    if(!inBounds(pos)){
+        return false;
+    }
+    cellType = grid[pos.x][pos.y];
+    return true;
 }
 
 /**
@@ -48,7 +52,15 @@ bool Board::inBounds(const Coords& pos) const {
  * @return True if all ships have been hit, otherwise false
  */
 bool Board::allShipsSunk() {
-    return false;
+    // Scan the entire grid; if any cell still contains a Ship, not all ships are sunk.
+    for (int x = 0; x < boardWidth; ++x) {
+        for (int y = 0; y < boardHeight; ++y) {
+            if (grid[x][y] == Ship) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 /**
