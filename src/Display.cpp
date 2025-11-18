@@ -4,6 +4,7 @@
 
 #include "Display.hpp"
 #include <iostream>
+#include <iomanip>
 
 namespace Display {
 
@@ -174,8 +175,76 @@ namespace Display {
 
     /**
      * @brief Draws ships in a row or column and gives their name and size
+     * @param[in] ships You must pass the ships structure to this function or else it won't work
      */
     void DrawShips(const std::vector<ShipStruct>& ships) {
+
+        // Constants for label widths
+
+        const int WIDTH_NAME = 20;
+        const int WIDTH_SIZE = 12;
+
+        std::cout << "\n\nAvailable Ships:\n";
+
+        // Print the labels
+
+        // Print top of table
+
+        std::cout << "┏";
+        for(int w = 0; w < WIDTH_NAME; w++) {
+            std::cout << "━";
+        }
+        std::cout << "┯";
+        for(int w = 0; w < WIDTH_SIZE; w++) {
+            std::cout << "━";
+        }
+        std::cout << "┓" << std::endl;
+
+        // Print legend labels
+
+        std::cout << "┃";
+        std::cout << std::setfill(' ') << std::setw(WIDTH_NAME) << std::left << "Ship Type:";
+        std::cout << "│";
+        std::cout << std::setfill(' ') << std::setw(WIDTH_SIZE) << std::left << "Ship Size:";
+        std::cout << "┃" << std::endl; 
+
+        // Print each ship and its size
+
+        for(int i = 0; i < ships.size(); i++){
+
+            // Horizontal divider
+
+            std::cout << "┠";
+            for(int w = 0; w < WIDTH_NAME; w++){
+                std::cout << "─";
+            }
+            std::cout << "┼";
+            for(int w = 0; w < WIDTH_SIZE; w++){
+                std::cout << "─";
+            }
+            std::cout << "┨" << std::endl;
+
+            // Ship info
+
+            std::cout << "┃";
+            std::cout << std::setfill(' ') << std::left << std::setw(WIDTH_NAME) << ships[i].name;
+            std::cout << "│";
+            std::cout << std::setfill(' ') << std::left << std::setw(WIDTH_SIZE) << ships[i].size;
+            std::cout << "┃" << std::endl;
+
+        }
+
+        // Bottom of table
+        
+        std::cout << "┗";
+        for(int w = 0; w < WIDTH_NAME; w++){
+            std::cout << "━";
+        }
+        std::cout << "┷";
+        for(int w = 0; w < WIDTH_SIZE; w++){
+            std::cout << "━";
+        }
+        std::cout << "┛" << std::endl;
 
     }
 
