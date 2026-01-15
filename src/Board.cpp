@@ -42,7 +42,8 @@ bool Board::shotByOpponent(const Coords& cell) {
 
     if(cellval == CellTypes::Ship)
         grid[cell.x][cell.y] = CellTypes::Hit;
-    else if (cellval == CellTypes::Empty)
+
+    if (cellval == CellTypes::Empty)
         grid[cell.x][cell.y] = CellTypes::Miss;
 
     return true;
