@@ -36,14 +36,24 @@ bool Board::getCell(const Coords& pos, CellTypes& cellType) const {
  * @return True if shot is valid, otherwise false
  */
 bool Board::shotByOpponent(const Coords& cell) {
-    return false;
+    CellTypes cellval = grid[cell.x][cell.y];
+    if (cellval == CellTypes::Miss || cellval == CellTypes::Hit)
+        return false;
+
+    if(cellval == CellTypes::Ship)
+        grid[cell.x][cell.y] = CellTypes::Hit;
+
+    if (cellval == CellTypes::Empty)
+        grid[cell.x][cell.y] = CellTypes::Miss;
+
+    return true;
 }
 
 /**
  * @brief Checks if given cell is in bounds of board
  *
  * @param[in] pos Position of given cell
- * @return True if cell is in bounds, otherwise false
+ * @return True if cell is in bound, otherwise false
  */
 bool Board::inBounds(const Coords& pos) const {
     if (pos.x >= 0 && pos.x < boardWidth
