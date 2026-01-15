@@ -46,8 +46,8 @@ bool Board::shotByOpponent(const Coords& cell) {
  * @return True if cell is in bounds, otherwise false
  */
 bool Board::inBounds(const Coords& pos) const {
-    if (pos.x >= 0 && pos.x <= boardWidth
-        && pos.y >= 0 && pos.y <= boardHeight)
+    if (pos.x >= 0 && pos.x < boardWidth
+        && pos.y >= 0 && pos.y < boardHeight)
     {
         return true;
     }
@@ -75,7 +75,39 @@ bool Board::allShipsSunk() {
  * @brief Clears board and randomly places ships on board
  */
 void Board::randomShipPlacement() {
+    for (auto a : ships) {
+        bool placementFailed = true;
+        Coords startPos;
+        Coords moveCoords;
 
+        while (placementFailed) {
+            // Get random starting position and direction
+            startPos = {
+                std::rand() % boardWidth,
+                std::rand() % boardHeight
+            };
+
+            Direction dir = (Direction)(std::rand() % 4);
+            moveCoords = directionDeltas[dir];
+
+            // Check if that is valid ship placement
+            Coords curPos = startPos;
+            placementFailed = false;
+            for (int i = 0; i < a.size; ++i) {
+                if (!inBounds(curPos) || grid[curPos.x][curPos.y] != Empty) {
+                    placementFailed = true;
+                    break;
+                }
+                curPos += moveCoords;
+            }
+        }
+
+        // Set cells on board to Ship
+        for (int i = 0; i < a.size; ++i) {
+            grid[startPos.x][startPos.y] = Ship;
+            startPos += moveCoords;
+        }
+    }
 }
 
 /**

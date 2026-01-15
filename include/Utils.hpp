@@ -16,6 +16,36 @@
 struct Coords {
     int x;
     int y;
+
+    Coords operator+(const Coords& rhs) const {
+        Coords newCoords;
+        newCoords.x = x + rhs.x;
+        newCoords.y = y + rhs.y;
+        return newCoords;
+    }
+
+    Coords& operator+=(const Coords& rhs) {
+        x += rhs.x;
+        y += rhs.y;
+        return *this;
+    }
+};
+
+/**
+ * @enum Direction
+ */
+enum Direction{
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
+};
+
+constexpr Coords directionDeltas[] = {
+    { 0, -1 }, // UP
+    { 0,  1 }, // DOWN
+    { -1, 0 }, // Left
+    {  1, 0 }, // Right
 };
 
 /**
