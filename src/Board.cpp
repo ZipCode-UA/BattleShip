@@ -16,7 +16,7 @@ Board::Board() {
 
 /**
  * @brief Returns the cell type of a given cell
- * 
+ *
  * @param[in] pos Represents the coordinates of the given cell
  * @param[out] cellType The cellType of the given coordinates
  * @return True if coordinates were valid, otherwise returns false 
@@ -31,7 +31,7 @@ bool Board::getCell(const Coords& pos, CellTypes& cellType) const {
 
 /**
  * @brief Validate shot location is valid
- * 
+ *
  * @param cell Coordinates of cell being shot
  * @return True if shot is valid, otherwise false
  */
@@ -69,7 +69,7 @@ bool Board::inBounds(const Coords& pos) const {
  *
  * @return True if all ships have been hit, otherwise false
  */
-bool Board::allShipsSunk() {
+bool Board::allShipsSunk() const {
     // Scan the entire grid; if any cell still contains a Ship, not all ships are sunk.
     for (int x = 0; x < boardWidth; ++x) {
         for (int y = 0; y < boardHeight; ++y) {
@@ -108,13 +108,13 @@ void Board::randomShipPlacement() {
 
 /**
  * @brief Checks if given ship placement is valid
- * 
+ *
  * @param[in] ship ship struct being checked
  * @param[in] startPos position the ship will be placed at
  * @param[in] dir the direction the ship is being placed
  * @return True if ship placement is valid, otherwise returns false
  */
-bool Board::validShipPlacement(const ShipStruct& ship, const Coords& startPos, const Direction dir) {
+bool Board::validShipPlacement(const ShipStruct& ship, const Coords& startPos, const Direction dir) const {
     Coords moveCoords = directionDeltas[dir];
 
     // Check if that is valid ship placement
@@ -130,6 +130,7 @@ bool Board::validShipPlacement(const ShipStruct& ship, const Coords& startPos, c
 
 /**
  * @brief Places ship cells on board
+ *
  * @param[in] ship ship struct being checked
  * @param[in] startPos position the ship will be placed at
  * @param[in] dir the direction the ship is being placed
@@ -160,7 +161,7 @@ void Board::clearBoard() {
 
 /**
  * @brief Decides where to shoot opponent's board
- * 
+ *
  * @param enemyBoard The board of the enemy to shoot
  * @return The location to be shot
  */

@@ -170,7 +170,7 @@ void placeShips(Board& board) {
  */
 void placeShip(const ShipStruct& ship, Board& board) {
     while (true) {
-        std::cout << "Enter Cell and Dir for " << ship.name << " (eg. a3 u):";
+        std::cout << "Enter Cell and Direction for " << ship.name << " (eg. \"A3 D\"): ";
         std::string input;
         std::getline(std::cin, input);
 
