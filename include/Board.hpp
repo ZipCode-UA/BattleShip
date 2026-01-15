@@ -57,6 +57,24 @@ public:
     void randomShipPlacement();
 
     /**
+     * @brief Checks if given ship placement is valid
+     * 
+     * @param[in] ship ship struct being checked
+     * @param[in] startPos position the ship will be placed at
+     * @param[in] dir the direction the ship is being placed
+     * @return True if ship placement is valid, otherwise returns false
+     */
+    bool validShipPlacement(const ShipStruct& ship, const Coords& startPos, const Direction dir);
+
+    /**
+     * @brief Places ship cells on board
+     * @param[in] ship ship struct being checked
+     * @param[in] startPos position the ship will be placed at
+     * @param[in] dir the direction the ship is being placed
+     */
+    void placeShip(const ShipStruct& ship, const Coords& startPos, Direction dir);
+
+    /**
      * @brief Sets all cell states to Empty
      */
     void clearBoard();
