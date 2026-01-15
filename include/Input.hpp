@@ -39,6 +39,11 @@ Coords getShotCell(const Board &board);
 /**
  * @brief Prompts, parses, and validates user ship placement
  */
-void placeShips();
+void placeShips(Board&);
+
+/**
+ * @brief 
+ */
+void placeShip(const ShipStruct& ship, Board& board);
 
 #endif

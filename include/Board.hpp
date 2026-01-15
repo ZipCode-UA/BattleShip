@@ -49,12 +49,31 @@ public:
      *
      * @return True if all ships have been hit, otherwise false
      */
-    bool allShipsSunk();
+    bool allShipsSunk() const;
 
     /**
      * @brief Clears board and randomly places ships on board
      */
     void randomShipPlacement();
+
+    /**
+     * @brief Checks if given ship placement is valid
+     *
+     * @param[in] ship ship struct being checked
+     * @param[in] startPos position the ship will be placed at
+     * @param[in] dir the direction the ship is being placed
+     * @return True if ship placement is valid, otherwise returns false
+     */
+    bool validShipPlacement(const ShipStruct& ship, const Coords& startPos, const Direction dir) const;
+
+    /**
+     * @brief Places ship cells on board
+     *
+     * @param[in] ship ship struct being checked
+     * @param[in] startPos position the ship will be placed at
+     * @param[in] dir the direction the ship is being placed
+     */
+    void placeShip(const ShipStruct& ship, const Coords& startPos, Direction dir);
 
     /**
      * @brief Sets all cell states to Empty

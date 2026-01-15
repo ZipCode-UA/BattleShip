@@ -27,6 +27,30 @@ namespace Display {
     }
 
     /**
+     * @brief Draws cells in gird to standard output
+     *
+     * @param[in] board The board being drawn
+     * @param[in] showShips Determines whether ships will be shown
+     */
+    void DrawBoard(const Board& board, bool showShips){
+        // Reset Screen
+        std::cout << "\033[2J";
+
+        // Draw Player 1 Board
+        const Coords board1Pos = {1, 1};
+        std::cout << "\033[1;1H";
+        std::cout << std::string("\033[1;" + std::to_string(board1Pos.x) + "H");
+        std::cout << "   Your Board";
+        std::cout << "\033[1B";
+        DrawEmptyGrid(board1Pos, board.boardWidth, board.boardHeight);
+        DrawCells(board, board1Pos, true);
+
+        // Set cursor Below Boards
+        std::cout << "\033[1G";
+    }
+
+
+    /**
      * @brief Draws players board as well as oponents board
      *
      * @param[in] player Current Players board to be drawn with ships shown

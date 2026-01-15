@@ -16,6 +16,9 @@ namespace Display {
 
     /**
      * @brief Draws cells in gird to standard output
+     *
+     * @param[in] board The board being drawn
+     * @param[in] showShips Determines whether ships will be shown
      */
     void DrawBoard(const Board& board, bool showShips = true);
 

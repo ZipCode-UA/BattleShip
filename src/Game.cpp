@@ -19,9 +19,7 @@ void Game::run() {
     std::srand(static_cast<unsigned>(std::time(nullptr)));
 
     // Place Ships
-    Display::DrawBoard(Player1, Player2);
-    Display::DrawShips(ships);
-    placeShips();
+    placeShips(Player1);
     // Player1.randomShipPlacement();
 
     // Generate Opponent Board
@@ -32,6 +30,7 @@ void Game::run() {
 
     while (inGame) {
         // Get player1 move
+        Display::DrawBoard(Player1, Player2);
         Coords curCoords = getShotCell(Player2);
         Player2.shotByOpponent(curCoords);
         Display::DrawBoard(Player1, Player2);
