@@ -212,8 +212,10 @@ void placeShip(const ShipStruct& ship, Board& board) {
             break;
         }
 
-        if (!board.validShipPlacement(ship, cell, dir))
+        if (!board.validShipPlacement(ship, cell, dir)) {
+            std::cerr << "Invalid Ship Placement";
             continue;
+        }
 
         board.placeShip(ship, cell, dir);
         break;
