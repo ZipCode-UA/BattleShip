@@ -5,6 +5,8 @@
 #include "Game.hpp"
 #include "Display.hpp"
 #include "Input.hpp"
+#include <ctime>
+#include <cstdlib>
 
 Game::Game() {
 
@@ -14,11 +16,13 @@ Game::Game() {
  * @brief Starts game loop
  */
 void Game::run() {
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
 
     // Place Ships
     Display::DrawBoard(Player1, Player2);
     Display::DrawShips(ships);
     placeShips();
+    // Player1.randomShipPlacement();
 
     // Generate Opponent Board
     Player2.randomShipPlacement();
